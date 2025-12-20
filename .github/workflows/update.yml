@@ -1,0 +1,60 @@
+name: Update Gambling Blocklist
+
+on:
+  schedule:
+    # Run daily at 6am UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    branches:
+      - main
+    paths:
+      - 'scraper.py'
+      - 'domains/**'
+
+jobs:
+  update-blocklist:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run scraper
+        run: python scraper.py
+      
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code lists/ || echo "changes=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push changes
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add lists/
+          git commit -m "Update blocklists - $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: blocklists
+          path: lists/
+          retention-days: 7
