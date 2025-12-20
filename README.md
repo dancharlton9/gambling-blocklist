@@ -1,4 +1,4 @@
-# Non-GamStop Casino Blocklist
+# Non-GamStop Gambling Blocklist
 
 A focused blocklist of offshore casinos that circumvent [GamStop](https://www.gamstop.co.uk/) self-exclusion. Designed to complement existing gambling blocklists.
 
@@ -6,24 +6,24 @@ A focused blocklist of offshore casinos that circumvent [GamStop](https://www.ga
 
 ### Pi-hole
 ```
-https://raw.githubusercontent.com/dancharlton9/gamblng-blocklist/main/lists/gamblng-blocklist.txt
+https://raw.githubusercontent.com/dancharlton9/gambling-blocklist/main/lists/blocklist.txt
 ```
 
 ### AdGuard Home
 ```
-https://raw.githubusercontent.com/dancharlton9/gamblng-blocklist/main/lists/gamblng-blocklist-adguard.txt
+https://raw.githubusercontent.com/dancharlton9/gambling-blocklist/main/lists/blocklist-adguard.txt
 ```
 
 ### Hosts file
 ```
-https://raw.githubusercontent.com/dancharlton9/gamblng-blocklist/main/lists/gamblng-blocklist-hosts.txt
+https://raw.githubusercontent.com/dancharlton9/gambling-blocklist/main/lists/blocklist-hosts.txt
 ```
 
 ## How It Works
 
-The scraper visits aggregator sites that advertise non-GamStop casinos and extracts the casino domains they promote. It then generates numbered variants (1-9) to catch common domain patterns like `gambiva8.com`.
+The scraper uses Playwright to visit aggregator sites that advertise non-GamStop casinos, clicks "Play Now" buttons, and captures where they redirect to. It then generates numbered variants (1-9) to catch common domain patterns like `gambiva8.com`.
 
-Updates run daily via GitHub Actions.
+Updates run weekly via GitHub Actions.
 
 ## Adding Domains
 
