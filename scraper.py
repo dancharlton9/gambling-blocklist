@@ -2,8 +2,8 @@
 """
 Non-GamStop Casino Blocklist Scraper
 
-Uses Playwright (headless browser) to scrape aggregator sites that advertise
-non-GamStop casinos. This bypasses Cloudflare and similar bot protection.
+Uses Playwright to scrape aggregator sites, clicking through "Play Now" 
+redirect links to discover the actual casino domains.
 """
 
 import re
@@ -54,6 +54,14 @@ EXCLUDE_DOMAINS = {
     'nongamstopcasinos.net', 'casinonotongamstop.com', 'casinosnotongamstop.org',
 }
 
+# Button text patterns to look for (case insensitive)
+BUTTON_PATTERNS = [
+    'play now', 'play here', 'visit', 'visit casino', 'visit site',
+    'claim bonus', 'claim now', 'get bonus', 'grab bonus',
+    'sign up', 'register', 'join now', 'start playing',
+    'go to casino', 'go to site', 'open casino',
+]
+
 # Gambling TLDs and keywords
 GAMBLING_TLDS = {'.casino', '.bet', '.games', '.game', '.io', '.ag', '.gg', '.vip', '.win', '.fun'}
 GAMBLING_KEYWORDS = ['casino', 'bet', 'slots', 'poker', 'spin', 'vegas', 'lucky', 'jackpot', 'win', 'game', 'play', 'wager', 'stake', 'roulette', 'bingo']
@@ -86,23 +94,137 @@ class NonGamstopScraper:
                 return True
         return False
     
-    def extract_domains_from_page(self, page) -> set:
-        """Extract domains from all links on the page."""
-        found = set()
+    def extract_domain_from_url(self, url: str) -> str:
+        """Extract and clean domain from URL."""
         try:
+            parsed = urlparse(url)
+            domain = parsed.netloc.lower().replace('www.', '')
+            return domain
+        except Exception:
+            return ''
+    
+    def find_redirect_links(self, page) -> list:
+        """Find all links that look like casino redirect links."""
+        redirect_links = []
+        
+        try:
+            # Get all links on the page
             links = page.query_selector_all('a[href]')
+            
             for link in links:
-                href = link.get_attribute('href')
-                if href and href.startswith(('http://', 'https://')):
-                    try:
-                        parsed = urlparse(href)
-                        domain = parsed.netloc.lower().replace('www.', '')
-                        if self.is_valid_domain(domain) and self.looks_like_casino(domain):
-                            found.add(domain)
-                    except Exception:
-                        pass
+                try:
+                    href = link.get_attribute('href') or ''
+                    text = (link.inner_text() or '').lower().strip()
+                    
+                    # Check if button text matches our patterns
+                    is_button = any(pattern in text for pattern in BUTTON_PATTERNS)
+                    
+                    # Check if href looks like a redirect link (contains /visit/, /go/, /out/, etc.)
+                    is_redirect_url = any(x in href.lower() for x in ['/visit/', '/go/', '/out/', '/redirect/', '/link/', '/click/', '/track/'])
+                    
+                    if is_button or is_redirect_url:
+                        # Get absolute URL
+                        if href.startswith('/'):
+                            base_url = page.url
+                            parsed = urlparse(base_url)
+                            href = f"{parsed.scheme}://{parsed.netloc}{href}"
+                        
+                        if href.startswith('http'):
+                            redirect_links.append(href)
+                            
+                except Exception:
+                    continue
+                    
         except Exception as e:
-            logger.warning(f"Error extracting links: {e}")
+            logger.warning(f"Error finding redirect links: {e}")
+        
+        return list(set(redirect_links))  # Dedupe
+    
+    def follow_redirect(self, context, url: str, timeout: int = 15000) -> str:
+        """Follow a redirect link and return the final destination domain."""
+        page = None
+        try:
+            page = context.new_page()
+            
+            # Navigate and wait for redirects to complete
+            response = page.goto(url, timeout=timeout, wait_until='domcontentloaded')
+            
+            # Give it a moment for JS redirects
+            time.sleep(1)
+            
+            # Get final URL after all redirects
+            final_url = page.url
+            domain = self.extract_domain_from_url(final_url)
+            
+            return domain
+            
+        except PlaywrightTimeout:
+            # Timeout might mean we hit the casino site (which might block us)
+            # Try to get whatever URL we landed on
+            if page:
+                try:
+                    domain = self.extract_domain_from_url(page.url)
+                    return domain
+                except Exception:
+                    pass
+            return ''
+        except Exception as e:
+            logger.debug(f"Error following redirect {url}: {e}")
+            return ''
+        finally:
+            if page:
+                try:
+                    page.close()
+                except Exception:
+                    pass
+    
+    def scrape_aggregator(self, context, page, url: str) -> set:
+        """Scrape a single aggregator URL."""
+        found = set()
+        
+        try:
+            logger.info(f"Scraping: {url}")
+            
+            # Navigate to the page
+            page.goto(url, timeout=60000, wait_until='domcontentloaded')
+            time.sleep(random.uniform(2, 4))
+            
+            # Scroll to load lazy content
+            page.evaluate('window.scrollTo(0, document.body.scrollHeight / 2)')
+            time.sleep(1)
+            page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
+            time.sleep(1)
+            
+            # Find redirect links
+            redirect_links = self.find_redirect_links(page)
+            logger.info(f"  Found {len(redirect_links)} redirect links to follow")
+            
+            # Follow each redirect link (limit to avoid taking too long)
+            max_links = 50  # Reasonable limit per page
+            for i, link in enumerate(redirect_links[:max_links]):
+                domain = self.follow_redirect(context, link)
+                
+                if domain and self.is_valid_domain(domain):
+                    if self.looks_like_casino(domain):
+                        found.add(domain)
+                        logger.info(f"    Discovered: {domain}")
+                    else:
+                        # Still might be a casino even without keywords
+                        # Add it if it's not obviously something else
+                        if not any(x in domain for x in ['google', 'facebook', 'twitter', 'amazon']):
+                            found.add(domain)
+                            logger.info(f"    Discovered (no keyword match): {domain}")
+                
+                # Small delay between redirects
+                time.sleep(random.uniform(0.5, 1.5))
+            
+            logger.info(f"  Total domains from this page: {len(found)}")
+            
+        except PlaywrightTimeout:
+            logger.warning(f"  Timeout loading {url}")
+        except Exception as e:
+            logger.warning(f"  Error scraping {url}: {e}")
+        
         return found
     
     def scrape_with_browser(self) -> set:
@@ -110,7 +232,6 @@ class NonGamstopScraper:
         all_found = set()
         
         with sync_playwright() as p:
-            # Launch browser with realistic settings
             browser = p.chromium.launch(
                 headless=True,
                 args=['--disable-blink-features=AutomationControlled']
@@ -123,36 +244,15 @@ class NonGamstopScraper:
                 timezone_id='Europe/London',
             )
             
+            # Main page for navigation
             page = context.new_page()
             
             for url in AGGREGATOR_URLS:
-                try:
-                    logger.info(f"Scraping: {url}")
-                    
-                    # Random delay to seem more human
-                    time.sleep(random.uniform(2, 5))
-                    
-                    # Navigate with longer timeout for slow sites
-                    page.goto(url, timeout=60000, wait_until='domcontentloaded')
-                    
-                    # Wait a bit for JS to render
-                    time.sleep(random.uniform(1, 3))
-                    
-                    # Scroll down to trigger lazy loading
-                    page.evaluate('window.scrollTo(0, document.body.scrollHeight / 2)')
-                    time.sleep(1)
-                    page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
-                    time.sleep(1)
-                    
-                    # Extract domains
-                    found = self.extract_domains_from_page(page)
-                    all_found.update(found)
-                    logger.info(f"  Found {len(found)} casino domains")
-                    
-                except PlaywrightTimeout:
-                    logger.warning(f"  Timeout loading {url}")
-                except Exception as e:
-                    logger.warning(f"  Error scraping {url}: {e}")
+                # Random delay between sites
+                time.sleep(random.uniform(3, 6))
+                
+                found = self.scrape_aggregator(context, page, url)
+                all_found.update(found)
             
             browser.close()
         
