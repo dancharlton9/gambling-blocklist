@@ -1,13 +1,37 @@
 # Manual Domain Additions
-#
-# Add domains you want blocked here, one per line.
-# Lines starting with # are comments.
-#
-# Examples:
-# some-casino.com
-# betting-site.io
-#
+# Add domains one per line. Lines starting with # are comments.
 
-# Your additions below:
+# Original domains that prompted this project
 gambiva.com
 gambiva8.com
+
+# Well-known non-GamStop casinos (Curacao licensed)
+mystake.com
+goldenbet.com
+velobet.com
+freshbet.com
+donbet.com
+katanaspin.com
+koispins.com
+rolletto.com
+instantcasino.com
+slottica.com
+
+# Crypto casinos
+stake.com
+bc.game
+roobet.com
+duelbits.com
+fortunejack.com
+bitcasino.io
+bitstarz.com
+cloudbet.com
+fairspin.io
+mbitcasino.com
+
+# Other offshore betting
+1xbet.com
+22bet.com
+melbet.com
+betwinner.com
+megapari.com
