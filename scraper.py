@@ -2,34 +2,25 @@
 """
 Non-GamStop Casino Blocklist Scraper
 
-Scrapes aggregator sites that advertise non-GamStop casinos and extracts
-the casino domains they promote. Intended for harm reduction.
-
-This list is designed to complement existing gambling blocklists by
-specifically targeting offshore casinos that circumvent GamStop.
+Uses Playwright (headless browser) to scrape aggregator sites that advertise
+non-GamStop casinos. This bypasses Cloudflare and similar bot protection.
 """
 
 import re
-import requests
-from bs4 import BeautifulSoup
+import random
+import time
 from urllib.parse import urlparse
 from datetime import datetime, timezone
 from pathlib import Path
 import json
-import time
 import logging
+
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-    'Accept-Language': 'en-GB,en;q=0.5',
-}
-
 # Aggregator sites that list non-GamStop casinos
-# These are the sites we scrape to find casino domains
 AGGREGATOR_URLS = [
     'https://www.pieria.co.uk/',
     'https://www.vso.org.uk/',
@@ -43,120 +34,134 @@ AGGREGATOR_URLS = [
     'https://www.onlinecasinosnotongamstop.uk.net/',
 ]
 
-# Domains to exclude (legitimate sites, support sites, false positives)
+# Domains to exclude
 EXCLUDE_DOMAINS = {
-    # Search engines, social media, etc
+    # Common sites
     'google.com', 'facebook.com', 'twitter.com', 'youtube.com', 'instagram.com',
     'linkedin.com', 'reddit.com', 'wikipedia.org', 'amazon.com', 't.co', 'x.com',
-    # Responsible gambling / support
+    'pinterest.com', 'tiktok.com', 'whatsapp.com', 'telegram.org',
+    # Responsible gambling
     'gamstop.co.uk', 'begambleaware.org', 'gamcare.org.uk', 'gamblingcommission.gov.uk',
     'responsiblegambling.org', 'ncpgambling.org', 'gamblersanonymous.org',
-    # CDNs and common services
+    # Tech/CDN
     'cloudflare.com', 'jsdelivr.net', 'googleapis.com', 'gstatic.com',
-    'w3.org', 'schema.org', 'trustpilot.com',
-    # The aggregator sites themselves (we scrape them, not block them)
+    'w3.org', 'schema.org', 'trustpilot.com', 'cloudflare-dns.com',
+    'jquery.com', 'bootstrapcdn.com', 'fontawesome.com', 'fonts.google.com',
+    # Aggregators (we scrape them, don't block)
+    'pieria.co.uk', 'vso.org.uk', 'egamersworld.com', 'esportsinsider.com',
+    'thebigfixup.us.org', 'wizardexploratorium.uk.com', 'peopletree.eu',
+    'yorkshire-bridge.gr.com', 'inlandhome.us.org', 'onlinecasinosnotongamstop.uk.net',
     'nongamstopcasinos.net', 'casinonotongamstop.com', 'casinosnotongamstop.org',
-    'nonstopcasino.org', 'casinosanalyzer.com', 'pieria.co.uk', 'vso.org.uk',
-    'egamersworld.com', 'esportsinsider.com', 'thebigfixup.us.org',
-    'wizardexploratorium.uk.com', 'peopletree.eu', 'yorkshire-bridge.gr.com',
-    'inlandhome.us.org', 'onlinecasinosnotongamstop.uk.net',
 }
 
-# TLDs commonly used by gambling sites
+# Gambling TLDs and keywords
 GAMBLING_TLDS = {'.casino', '.bet', '.games', '.game', '.io', '.ag', '.gg', '.vip', '.win', '.fun'}
+GAMBLING_KEYWORDS = ['casino', 'bet', 'slots', 'poker', 'spin', 'vegas', 'lucky', 'jackpot', 'win', 'game', 'play', 'wager', 'stake', 'roulette', 'bingo']
 
 
 class NonGamstopScraper:
     def __init__(self):
         self.domains = set()
-        self.session = requests.Session()
-        self.session.headers.update(HEADERS)
     
     def is_valid_domain(self, domain: str) -> bool:
-        """Check if domain is valid and not excluded."""
         domain = domain.lower().strip()
-        
         if not domain or len(domain) < 4 or len(domain) > 100:
             return False
         if '.' not in domain:
             return False
         if not re.match(r'^[a-z0-9][-a-z0-9.]*[a-z0-9]$', domain):
             return False
-        
-        # Check exclusions
         for excluded in EXCLUDE_DOMAINS:
             if domain == excluded or domain.endswith('.' + excluded):
                 return False
-        
         return True
     
     def looks_like_casino(self, domain: str) -> bool:
-        """Check if domain looks like a gambling site."""
-        gambling_keywords = [
-            'casino', 'bet', 'slots', 'poker', 'spin', 'vegas', 'lucky',
-            'jackpot', 'win', 'game', 'play', 'wager', 'stake', 'roulette'
-        ]
-        
-        # Check TLD
-        for tld in GAMBLING_TLDS:
-            if domain.endswith(tld):
-                return True
-        
-        # Check keywords in domain
         domain_lower = domain.lower()
-        for keyword in gambling_keywords:
+        for tld in GAMBLING_TLDS:
+            if domain_lower.endswith(tld):
+                return True
+        for keyword in GAMBLING_KEYWORDS:
             if keyword in domain_lower:
                 return True
-        
         return False
     
-    def extract_domains_from_html(self, html: str) -> set:
-        """Extract casino domains from HTML content."""
-        found = set()
-        soup = BeautifulSoup(html, 'html.parser')
-        
-        # Extract from all links
-        for link in soup.find_all('a', href=True):
-            href = link.get('href', '')
-            try:
-                if href.startswith(('http://', 'https://')):
-                    parsed = urlparse(href)
-                    domain = parsed.netloc.lower().replace('www.', '')
-                    if self.is_valid_domain(domain):
-                        found.add(domain)
-            except Exception:
-                pass
-        
-        return found
-    
-    def scrape_aggregator(self, url: str, delay: float = 3.0) -> set:
-        """Scrape a single aggregator URL for casino domains."""
+    def extract_domains_from_page(self, page) -> set:
+        """Extract domains from all links on the page."""
         found = set()
         try:
-            logger.info(f"Scraping: {url}")
-            time.sleep(delay)
-            response = self.session.get(url, timeout=30)
-            response.raise_for_status()
-            
-            all_domains = self.extract_domains_from_html(response.text)
-            
-            # Filter to only likely casino domains
-            for domain in all_domains:
-                if self.looks_like_casino(domain):
-                    found.add(domain)
-            
-            logger.info(f"  Found {len(found)} casino domains")
-            
+            links = page.query_selector_all('a[href]')
+            for link in links:
+                href = link.get_attribute('href')
+                if href and href.startswith(('http://', 'https://')):
+                    try:
+                        parsed = urlparse(href)
+                        domain = parsed.netloc.lower().replace('www.', '')
+                        if self.is_valid_domain(domain) and self.looks_like_casino(domain):
+                            found.add(domain)
+                    except Exception:
+                        pass
         except Exception as e:
-            logger.warning(f"  Error scraping {url}: {e}")
-        
+            logger.warning(f"Error extracting links: {e}")
         return found
     
+    def scrape_with_browser(self) -> set:
+        """Scrape all aggregator URLs using Playwright."""
+        all_found = set()
+        
+        with sync_playwright() as p:
+            # Launch browser with realistic settings
+            browser = p.chromium.launch(
+                headless=True,
+                args=['--disable-blink-features=AutomationControlled']
+            )
+            
+            context = browser.new_context(
+                viewport={'width': 1920, 'height': 1080},
+                user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                locale='en-GB',
+                timezone_id='Europe/London',
+            )
+            
+            page = context.new_page()
+            
+            for url in AGGREGATOR_URLS:
+                try:
+                    logger.info(f"Scraping: {url}")
+                    
+                    # Random delay to seem more human
+                    time.sleep(random.uniform(2, 5))
+                    
+                    # Navigate with longer timeout for slow sites
+                    page.goto(url, timeout=60000, wait_until='domcontentloaded')
+                    
+                    # Wait a bit for JS to render
+                    time.sleep(random.uniform(1, 3))
+                    
+                    # Scroll down to trigger lazy loading
+                    page.evaluate('window.scrollTo(0, document.body.scrollHeight / 2)')
+                    time.sleep(1)
+                    page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
+                    time.sleep(1)
+                    
+                    # Extract domains
+                    found = self.extract_domains_from_page(page)
+                    all_found.update(found)
+                    logger.info(f"  Found {len(found)} casino domains")
+                    
+                except PlaywrightTimeout:
+                    logger.warning(f"  Timeout loading {url}")
+                except Exception as e:
+                    logger.warning(f"  Error scraping {url}: {e}")
+            
+            browser.close()
+        
+        return all_found
+    
     def load_manual_domains(self) -> set:
-        """Load manually added domains from domains/manual.txt"""
+        """Load manually added domains."""
         manual_file = Path(__file__).parent / 'domains' / 'manual.txt'
         domains = set()
-        
         if manual_file.exists():
             for line in manual_file.read_text().splitlines():
                 line = line.strip()
@@ -164,41 +169,34 @@ class NonGamstopScraper:
                     if self.is_valid_domain(line):
                         domains.add(line.lower())
             logger.info(f"Loaded {len(domains)} manual domains")
-        
         return domains
     
     def generate_variants(self, domains: set) -> set:
-        """Generate numbered variants (1-9 only) for discovered domains."""
+        """Generate numbered variants (1-9) for discovered domains."""
         variants = set()
-        
         for domain in domains:
             parts = domain.split('.')
             if len(parts) >= 2:
                 base = parts[0]
                 tld = '.'.join(parts[1:])
-                
-                # Only generate if base doesn't already end in a number
                 if not base[-1].isdigit():
-                    for i in range(1, 10):  # 1-9 only
+                    for i in range(1, 10):
                         variants.add(f"{base}{i}.{tld}")
-        
         return {d for d in variants if self.is_valid_domain(d)}
     
     def run(self) -> set:
         """Run the scraper."""
         logger.info("Starting non-GamStop casino scraper...")
         
-        # Load manual domains first
+        # Load manual domains
         self.domains.update(self.load_manual_domains())
         
-        # Scrape each aggregator
-        for url in AGGREGATOR_URLS:
-            found = self.scrape_aggregator(url)
-            self.domains.update(found)
+        # Scrape aggregators with browser
+        scraped = self.scrape_with_browser()
+        self.domains.update(scraped)
+        logger.info(f"Total unique domains: {len(self.domains)}")
         
-        logger.info(f"Total unique domains found: {len(self.domains)}")
-        
-        # Generate limited variants
+        # Generate variants
         variants = self.generate_variants(self.domains)
         self.domains.update(variants)
         logger.info(f"Total after variants (1-9): {len(self.domains)}")
@@ -207,29 +205,27 @@ class NonGamstopScraper:
 
 
 def generate_blocklist_files(domains: set, output_dir: Path):
-    """Generate blocklist files in multiple formats."""
+    """Generate blocklist files."""
     output_dir.mkdir(parents=True, exist_ok=True)
-    
     sorted_domains = sorted(domains)
     timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
     
     header = f"""# Non-GamStop Casino Blocklist
 #
 # Offshore casinos that circumvent GamStop self-exclusion.
-# Intended for harm reduction - use alongside standard gambling blocklists.
+# Use alongside standard gambling blocklists for comprehensive coverage.
 #
-# Repository: https://github.com/YOUR_USERNAME/gambling-blocklist
 # Last updated: {timestamp}
 # Total domains: {len(sorted_domains)}
 
 """
 
-    # Pi-hole format (just domains)
+    # Pi-hole format
     (output_dir / 'non-gamstop-blocklist.txt').write_text(
         header + '\n'.join(sorted_domains)
     )
     
-    # Hosts file format
+    # Hosts format
     hosts_lines = [f"0.0.0.0 {d}" for d in sorted_domains]
     (output_dir / 'non-gamstop-blocklist-hosts.txt').write_text(
         header + '\n'.join(hosts_lines)
@@ -241,14 +237,9 @@ def generate_blocklist_files(domains: set, output_dir: Path):
         header.replace('# ', '! ') + '\n'.join(adguard_lines)
     )
     
-    # JSON format
-    json_data = {
-        'updated': timestamp,
-        'count': len(sorted_domains),
-        'domains': sorted_domains
-    }
+    # JSON
     (output_dir / 'non-gamstop-blocklist.json').write_text(
-        json.dumps(json_data, indent=2)
+        json.dumps({'updated': timestamp, 'count': len(sorted_domains), 'domains': sorted_domains}, indent=2)
     )
     
     logger.info(f"Generated blocklists in {output_dir}")
@@ -257,10 +248,8 @@ def generate_blocklist_files(domains: set, output_dir: Path):
 def main():
     scraper = NonGamstopScraper()
     domains = scraper.run()
-    
     output_dir = Path(__file__).parent / 'lists'
     generate_blocklist_files(domains, output_dir)
-    
     logger.info(f"Done! {len(domains)} domains in blocklist")
 
 

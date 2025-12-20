@@ -16,6 +16,48 @@ koispins.com
 rolletto.com
 instantcasino.com
 slottica.com
+kaboomslots.com
+bettislots.com
+slotmonster.com
+magicwin.com
+piratespins.com
+vegashero.com
+1red.com
+lokicasino.com
+beonbet.com
+onluck.com
+kingdomcasino.com
+gamblezen.com
+royalfortune.com
+31bets.com
+winitbet.com
+21bets.com
+goldenlioncasino.com
+nonstopcasino.com
+megadice.com
+betticasino.com
+wazamba.com
+rabona.com
+sportaza.com
+dazard.com
+n1casino.com
+justspin.com
+slotman.com
+casoo.com
+nomini.com
+luckydreams.com
+casinozer.com
+neospin.com
+levelup.casino
+skycrown.com
+hellspin.com
+ivibet.com
+casinowilds.com
+bambet.com
+nationalcasino.com
+playfina.com
+megaslot.com
+weiss.bet
 
 # Crypto casinos
 stake.com
@@ -28,6 +70,12 @@ bitstarz.com
 cloudbet.com
 fairspin.io
 mbitcasino.com
+bitsler.com
+crashino.com
+trustdice.win
+betfury.io
+metaspins.com
+vave.com
 
 # Other offshore betting
 1xbet.com
@@ -35,3 +83,7 @@ mbitcasino.com
 melbet.com
 betwinner.com
 megapari.com
+paripesa.com
+betandyou.com
+20bet.com
+sportsbet.io

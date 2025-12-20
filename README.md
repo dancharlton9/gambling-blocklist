@@ -6,17 +6,17 @@ A focused blocklist of offshore casinos that circumvent [GamStop](https://www.ga
 
 ### Pi-hole
 ```
-https://raw.githubusercontent.com/dancharlton9/gambling-blocklist/main/lists/gambling-blocklist.txt
+https://raw.githubusercontent.com/dancharlton9/gamblng-blocklist/main/lists/gamblng-blocklist.txt
 ```
 
 ### AdGuard Home
 ```
-https://raw.githubusercontent.com/dancharlton9/gambling-blocklist/main/lists/gambling-blocklist-adguard.txt
+https://raw.githubusercontent.com/dancharlton9/gamblng-blocklist/main/lists/gamblng-blocklist-adguard.txt
 ```
 
 ### Hosts file
 ```
-https://raw.githubusercontent.com/dancharlton9/gambling-blocklist/main/lists/gambling-blocklist-hosts.txt
+https://raw.githubusercontent.com/dancharlton9/gamblng-blocklist/main/lists/gamblng-blocklist-hosts.txt
 ```
 
 ## How It Works

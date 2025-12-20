@@ -4,8 +4,8 @@
 # Intended for harm reduction - use alongside standard gambling blocklists.
 #
 # Repository: https://github.com/YOUR_USERNAME/gambling-blocklist
-# Last updated: 2025-12-20 06:26:45 UTC
-# Total domains: 270
+# Last updated: 2025-12-20 06:22:20 UTC
+# Total domains: 260
 
 0.0.0.0 1xbet.com
 0.0.0.0 1xbet1.com
@@ -67,16 +67,6 @@
 0.0.0.0 bitstarz7.com
 0.0.0.0 bitstarz8.com
 0.0.0.0 bitstarz9.com
-0.0.0.0 casino-experts.com
-0.0.0.0 casino-experts1.com
-0.0.0.0 casino-experts2.com
-0.0.0.0 casino-experts3.com
-0.0.0.0 casino-experts4.com
-0.0.0.0 casino-experts5.com
-0.0.0.0 casino-experts6.com
-0.0.0.0 casino-experts7.com
-0.0.0.0 casino-experts8.com
-0.0.0.0 casino-experts9.com
 0.0.0.0 cloudbet.com
 0.0.0.0 cloudbet1.com
 0.0.0.0 cloudbet2.com
