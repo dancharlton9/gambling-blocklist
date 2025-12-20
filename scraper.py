@@ -31,15 +31,16 @@ HEADERS = {
 # Aggregator sites that list non-GamStop casinos
 # These are the sites we scrape to find casino domains
 AGGREGATOR_URLS = [
-    'https://www.nongamstopcasinos.net/',
-    'https://www.nongamstopcasinos.net/new-casinos-not-on-gamstop/',
-    'https://www.nongamstopcasinos.net/crypto-casinos-not-on-gamstop/',
-    'https://casinonotongamstop.com/',
-    'https://www.casinosnotongamstop.org/',
-    'https://www.nonstopcasino.org/',
-    'https://nonstopcasino.org/uk/',
-    'https://casinosanalyzer.com/non-gamstop-casinos',
-    'https://www.casinosanalyzer.com/online-casinos/not-on-gamstop',
+    'https://www.pieria.co.uk/',
+    'https://www.vso.org.uk/',
+    'https://egamersworld.com/blog/reputable-casinos-not-on-gamstop-uk-in-2024-update-McFPNE3aV',
+    'https://esportsinsider.com/uk/gambling/non-gamstop-casinos',
+    'https://www.thebigfixup.us.org/',
+    'https://www.wizardexploratorium.uk.com/',
+    'https://peopletree.eu/',
+    'https://www.yorkshire-bridge.gr.com/',
+    'https://inlandhome.us.org/',
+    'https://www.onlinecasinosnotongamstop.uk.net/',
 ]
 
 # Domains to exclude (legitimate sites, support sites, false positives)
@@ -55,7 +56,10 @@ EXCLUDE_DOMAINS = {
     'w3.org', 'schema.org', 'trustpilot.com',
     # The aggregator sites themselves (we scrape them, not block them)
     'nongamstopcasinos.net', 'casinonotongamstop.com', 'casinosnotongamstop.org',
-    'nonstopcasino.org', 'casinosanalyzer.com',
+    'nonstopcasino.org', 'casinosanalyzer.com', 'pieria.co.uk', 'vso.org.uk',
+    'egamersworld.com', 'esportsinsider.com', 'thebigfixup.us.org',
+    'wizardexploratorium.uk.com', 'peopletree.eu', 'yorkshire-bridge.gr.com',
+    'inlandhome.us.org', 'onlinecasinosnotongamstop.uk.net',
 }
 
 # TLDs commonly used by gambling sites
