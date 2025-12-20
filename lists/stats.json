@@ -1,0 +1,12 @@
+{
+  "updated": "2025-12-20 06:05:51 UTC",
+  "total_domains": 2405,
+  "formats": [
+    "txt",
+    "hosts",
+    "adguard",
+    "dnsmasq",
+    "unbound",
+    "json"
+  ]
+}

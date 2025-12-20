@@ -1,0 +1,13 @@
+# Manual Domain Additions
+#
+# Add domains you want blocked here, one per line.
+# Lines starting with # are comments.
+#
+# Examples:
+# some-casino.com
+# betting-site.io
+#
+
+# Your additions below:
+gambiva.com
+gambiva8.com
