@@ -4,8 +4,8 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2025-12-21 06:11:46 UTC
-# Total domains: 880
+# Last updated: 2025-12-21 12:25:41 UTC
+# Total domains: 920
 
 1red.com
 1red1.com
@@ -117,6 +117,16 @@ betandyou6.com
 betandyou7.com
 betandyou8.com
 betandyou9.com
+betblast.com
+betblast1.com
+betblast2.com
+betblast3.com
+betblast4.com
+betblast5.com
+betblast6.com
+betblast7.com
+betblast8.com
+betblast9.com
 betfury.io
 betfury1.io
 betfury2.io
@@ -127,6 +137,16 @@ betfury6.io
 betfury7.io
 betfury8.io
 betfury9.io
+betmac.com
+betmac1.com
+betmac2.com
+betmac3.com
+betmac4.com
+betmac5.com
+betmac6.com
+betmac7.com
+betmac8.com
+betmac9.com
 betticasino.com
 betticasino1.com
 betticasino2.com
@@ -397,6 +417,16 @@ instantcasino6.com
 instantcasino7.com
 instantcasino8.com
 instantcasino9.com
+instaspin.com
+instaspin1.com
+instaspin2.com
+instaspin3.com
+instaspin4.com
+instaspin5.com
+instaspin6.com
+instaspin7.com
+instaspin8.com
+instaspin9.com
 ivibet.com
 ivibet1.com
 ivibet2.com
@@ -807,6 +837,16 @@ stake6.com
 stake7.com
 stake8.com
 stake9.com
+thehighroller.com
+thehighroller1.com
+thehighroller2.com
+thehighroller3.com
+thehighroller4.com
+thehighroller5.com
+thehighroller6.com
+thehighroller7.com
+thehighroller8.com
+thehighroller9.com
 track.affiliate31bets.com
 track1.affiliate31bets.com
 track2.affiliate31bets.com

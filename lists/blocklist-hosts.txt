@@ -4,8 +4,8 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2025-12-21 06:11:46 UTC
-# Total domains: 880
+# Last updated: 2025-12-21 12:25:41 UTC
+# Total domains: 920
 
 0.0.0.0 1red.com
 0.0.0.0 1red1.com
@@ -117,6 +117,16 @@
 0.0.0.0 betandyou7.com
 0.0.0.0 betandyou8.com
 0.0.0.0 betandyou9.com
+0.0.0.0 betblast.com
+0.0.0.0 betblast1.com
+0.0.0.0 betblast2.com
+0.0.0.0 betblast3.com
+0.0.0.0 betblast4.com
+0.0.0.0 betblast5.com
+0.0.0.0 betblast6.com
+0.0.0.0 betblast7.com
+0.0.0.0 betblast8.com
+0.0.0.0 betblast9.com
 0.0.0.0 betfury.io
 0.0.0.0 betfury1.io
 0.0.0.0 betfury2.io
@@ -127,6 +137,16 @@
 0.0.0.0 betfury7.io
 0.0.0.0 betfury8.io
 0.0.0.0 betfury9.io
+0.0.0.0 betmac.com
+0.0.0.0 betmac1.com
+0.0.0.0 betmac2.com
+0.0.0.0 betmac3.com
+0.0.0.0 betmac4.com
+0.0.0.0 betmac5.com
+0.0.0.0 betmac6.com
+0.0.0.0 betmac7.com
+0.0.0.0 betmac8.com
+0.0.0.0 betmac9.com
 0.0.0.0 betticasino.com
 0.0.0.0 betticasino1.com
 0.0.0.0 betticasino2.com
@@ -397,6 +417,16 @@
 0.0.0.0 instantcasino7.com
 0.0.0.0 instantcasino8.com
 0.0.0.0 instantcasino9.com
+0.0.0.0 instaspin.com
+0.0.0.0 instaspin1.com
+0.0.0.0 instaspin2.com
+0.0.0.0 instaspin3.com
+0.0.0.0 instaspin4.com
+0.0.0.0 instaspin5.com
+0.0.0.0 instaspin6.com
+0.0.0.0 instaspin7.com
+0.0.0.0 instaspin8.com
+0.0.0.0 instaspin9.com
 0.0.0.0 ivibet.com
 0.0.0.0 ivibet1.com
 0.0.0.0 ivibet2.com
@@ -807,6 +837,16 @@
 0.0.0.0 stake7.com
 0.0.0.0 stake8.com
 0.0.0.0 stake9.com
+0.0.0.0 thehighroller.com
+0.0.0.0 thehighroller1.com
+0.0.0.0 thehighroller2.com
+0.0.0.0 thehighroller3.com
+0.0.0.0 thehighroller4.com
+0.0.0.0 thehighroller5.com
+0.0.0.0 thehighroller6.com
+0.0.0.0 thehighroller7.com
+0.0.0.0 thehighroller8.com
+0.0.0.0 thehighroller9.com
 0.0.0.0 track.affiliate31bets.com
 0.0.0.0 track1.affiliate31bets.com
 0.0.0.0 track2.affiliate31bets.com
