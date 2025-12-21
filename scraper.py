@@ -32,6 +32,7 @@ AGGREGATOR_URLS = [
     'https://www.yorkshire-bridge.gr.com/',
     'https://inlandhome.us.org/',
     'https://www.onlinecasinosnotongamstop.uk.net/',
+    'https://www.nongamstopcasino.us.com/'
 ]
 
 # Domains to exclude
