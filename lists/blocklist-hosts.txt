@@ -4,8 +4,8 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2025-12-28 06:14:35 UTC
-# Total domains: 1182
+# Last updated: 2025-12-30 10:50:02 UTC
+# Total domains: 1183
 
 0.0.0.0 1red.com
 0.0.0.0 1red1.com
@@ -527,6 +527,16 @@
 0.0.0.0 highbet7.co.uk
 0.0.0.0 highbet8.co.uk
 0.0.0.0 highbet9.co.uk
+0.0.0.0 href.li
+0.0.0.0 href1.li
+0.0.0.0 href2.li
+0.0.0.0 href3.li
+0.0.0.0 href4.li
+0.0.0.0 href5.li
+0.0.0.0 href6.li
+0.0.0.0 href7.li
+0.0.0.0 href8.li
+0.0.0.0 href9.li
 0.0.0.0 instantcasino.com
 0.0.0.0 instantcasino1.com
 0.0.0.0 instantcasino2.com
@@ -998,17 +1008,7 @@
 0.0.0.0 spinnycasino7.com
 0.0.0.0 spinnycasino8.com
 0.0.0.0 spinnycasino9.com
-0.0.0.0 spinscastle14.com
-0.0.0.0 spinshark.com
-0.0.0.0 spinshark1.com
-0.0.0.0 spinshark2.com
-0.0.0.0 spinshark3.com
-0.0.0.0 spinshark4.com
-0.0.0.0 spinshark5.com
-0.0.0.0 spinshark6.com
-0.0.0.0 spinshark7.com
-0.0.0.0 spinshark8.com
-0.0.0.0 spinshark9.com
+0.0.0.0 spinscastle39.com
 0.0.0.0 spinyoo.com
 0.0.0.0 spinyoo1.com
 0.0.0.0 spinyoo2.com
@@ -1129,6 +1129,7 @@
 0.0.0.0 velobet7.com
 0.0.0.0 velobet8.com
 0.0.0.0 velobet9.com
+0.0.0.0 verywellcasino88.com
 0.0.0.0 virginbet.com
 0.0.0.0 virginbet1.com
 0.0.0.0 virginbet2.com

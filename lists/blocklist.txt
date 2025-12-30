@@ -4,8 +4,8 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2025-12-28 06:14:35 UTC
-# Total domains: 1182
+# Last updated: 2025-12-30 10:50:02 UTC
+# Total domains: 1183
 
 1red.com
 1red1.com
@@ -527,6 +527,16 @@ highbet6.co.uk
 highbet7.co.uk
 highbet8.co.uk
 highbet9.co.uk
+href.li
+href1.li
+href2.li
+href3.li
+href4.li
+href5.li
+href6.li
+href7.li
+href8.li
+href9.li
 instantcasino.com
 instantcasino1.com
 instantcasino2.com
@@ -998,17 +1008,7 @@ spinnycasino6.com
 spinnycasino7.com
 spinnycasino8.com
 spinnycasino9.com
-spinscastle14.com
-spinshark.com
-spinshark1.com
-spinshark2.com
-spinshark3.com
-spinshark4.com
-spinshark5.com
-spinshark6.com
-spinshark7.com
-spinshark8.com
-spinshark9.com
+spinscastle39.com
 spinyoo.com
 spinyoo1.com
 spinyoo2.com
@@ -1129,6 +1129,7 @@ velobet6.com
 velobet7.com
 velobet8.com
 velobet9.com
+verywellcasino88.com
 virginbet.com
 virginbet1.com
 virginbet2.com
