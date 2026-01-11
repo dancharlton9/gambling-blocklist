@@ -4,8 +4,8 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2026-01-04 06:16:25 UTC
-# Total domains: 1092
+# Last updated: 2026-01-11 06:39:38 UTC
+# Total domains: 1192
 
 0.0.0.0 1red.com
 0.0.0.0 1red1.com
@@ -77,6 +77,16 @@
 0.0.0.0 31bets7.com
 0.0.0.0 31bets8.com
 0.0.0.0 31bets9.com
+0.0.0.0 888casino.com
+0.0.0.0 888casino1.com
+0.0.0.0 888casino2.com
+0.0.0.0 888casino3.com
+0.0.0.0 888casino4.com
+0.0.0.0 888casino5.com
+0.0.0.0 888casino6.com
+0.0.0.0 888casino7.com
+0.0.0.0 888casino8.com
+0.0.0.0 888casino9.com
 0.0.0.0 amonbetpartner.media
 0.0.0.0 amonbetpartner1.media
 0.0.0.0 amonbetpartner2.media
@@ -137,6 +147,16 @@
 0.0.0.0 betblast7.com
 0.0.0.0 betblast8.com
 0.0.0.0 betblast9.com
+0.0.0.0 betfredsports.com
+0.0.0.0 betfredsports1.com
+0.0.0.0 betfredsports2.com
+0.0.0.0 betfredsports3.com
+0.0.0.0 betfredsports4.com
+0.0.0.0 betfredsports5.com
+0.0.0.0 betfredsports6.com
+0.0.0.0 betfredsports7.com
+0.0.0.0 betfredsports8.com
+0.0.0.0 betfredsports9.com
 0.0.0.0 betfury.io
 0.0.0.0 betfury1.io
 0.0.0.0 betfury2.io
@@ -417,6 +437,16 @@
 0.0.0.0 gamblezen7.com
 0.0.0.0 gamblezen8.com
 0.0.0.0 gamblezen9.com
+0.0.0.0 games.boylesports.com
+0.0.0.0 games1.boylesports.com
+0.0.0.0 games2.boylesports.com
+0.0.0.0 games3.boylesports.com
+0.0.0.0 games4.boylesports.com
+0.0.0.0 games5.boylesports.com
+0.0.0.0 games6.boylesports.com
+0.0.0.0 games7.boylesports.com
+0.0.0.0 games8.boylesports.com
+0.0.0.0 games9.boylesports.com
 0.0.0.0 go.affiliatemystake.com
 0.0.0.0 go1.affiliatemystake.com
 0.0.0.0 go2.affiliatemystake.com
@@ -487,6 +517,16 @@
 0.0.0.0 hellspin7.com
 0.0.0.0 hellspin8.com
 0.0.0.0 hellspin9.com
+0.0.0.0 highbet.co.uk
+0.0.0.0 highbet1.co.uk
+0.0.0.0 highbet2.co.uk
+0.0.0.0 highbet3.co.uk
+0.0.0.0 highbet4.co.uk
+0.0.0.0 highbet5.co.uk
+0.0.0.0 highbet6.co.uk
+0.0.0.0 highbet7.co.uk
+0.0.0.0 highbet8.co.uk
+0.0.0.0 highbet9.co.uk
 0.0.0.0 instantcasino.com
 0.0.0.0 instantcasino1.com
 0.0.0.0 instantcasino2.com
@@ -517,6 +557,16 @@
 0.0.0.0 ivibet7.com
 0.0.0.0 ivibet8.com
 0.0.0.0 ivibet9.com
+0.0.0.0 jeffbet.casino-pp.net
+0.0.0.0 jeffbet1.casino-pp.net
+0.0.0.0 jeffbet2.casino-pp.net
+0.0.0.0 jeffbet3.casino-pp.net
+0.0.0.0 jeffbet4.casino-pp.net
+0.0.0.0 jeffbet5.casino-pp.net
+0.0.0.0 jeffbet6.casino-pp.net
+0.0.0.0 jeffbet7.casino-pp.net
+0.0.0.0 jeffbet8.casino-pp.net
+0.0.0.0 jeffbet9.casino-pp.net
 0.0.0.0 justspin.com
 0.0.0.0 justspin1.com
 0.0.0.0 justspin2.com
@@ -628,6 +678,16 @@
 0.0.0.0 luckydreams7.com
 0.0.0.0 luckydreams8.com
 0.0.0.0 luckydreams9.com
+0.0.0.0 m.skybet.com
+0.0.0.0 m1.skybet.com
+0.0.0.0 m2.skybet.com
+0.0.0.0 m3.skybet.com
+0.0.0.0 m4.skybet.com
+0.0.0.0 m5.skybet.com
+0.0.0.0 m6.skybet.com
+0.0.0.0 m7.skybet.com
+0.0.0.0 m8.skybet.com
+0.0.0.0 m9.skybet.com
 0.0.0.0 madcasino.io
 0.0.0.0 madcasino1.io
 0.0.0.0 madcasino2.io
@@ -758,16 +818,16 @@
 0.0.0.0 neospin7.com
 0.0.0.0 neospin8.com
 0.0.0.0 neospin9.com
-0.0.0.0 nitrobet.pro
-0.0.0.0 nitrobet1.pro
-0.0.0.0 nitrobet2.pro
-0.0.0.0 nitrobet3.pro
-0.0.0.0 nitrobet4.pro
-0.0.0.0 nitrobet5.pro
-0.0.0.0 nitrobet6.pro
-0.0.0.0 nitrobet7.pro
-0.0.0.0 nitrobet8.pro
-0.0.0.0 nitrobet9.pro
+0.0.0.0 nitrobet.vip
+0.0.0.0 nitrobet1.vip
+0.0.0.0 nitrobet2.vip
+0.0.0.0 nitrobet3.vip
+0.0.0.0 nitrobet4.vip
+0.0.0.0 nitrobet5.vip
+0.0.0.0 nitrobet6.vip
+0.0.0.0 nitrobet7.vip
+0.0.0.0 nitrobet8.vip
+0.0.0.0 nitrobet9.vip
 0.0.0.0 nomini.com
 0.0.0.0 nomini1.com
 0.0.0.0 nomini2.com
@@ -808,6 +868,16 @@
 0.0.0.0 onluck7.com
 0.0.0.0 onluck8.com
 0.0.0.0 onluck9.com
+0.0.0.0 parimatch.co.uk
+0.0.0.0 parimatch1.co.uk
+0.0.0.0 parimatch2.co.uk
+0.0.0.0 parimatch3.co.uk
+0.0.0.0 parimatch4.co.uk
+0.0.0.0 parimatch5.co.uk
+0.0.0.0 parimatch6.co.uk
+0.0.0.0 parimatch7.co.uk
+0.0.0.0 parimatch8.co.uk
+0.0.0.0 parimatch9.co.uk
 0.0.0.0 paripesa.com
 0.0.0.0 paripesa1.com
 0.0.0.0 paripesa2.com
@@ -958,6 +1028,16 @@
 0.0.0.0 spinshark7.com
 0.0.0.0 spinshark8.com
 0.0.0.0 spinshark9.com
+0.0.0.0 spinyoo.com
+0.0.0.0 spinyoo1.com
+0.0.0.0 spinyoo2.com
+0.0.0.0 spinyoo3.com
+0.0.0.0 spinyoo4.com
+0.0.0.0 spinyoo5.com
+0.0.0.0 spinyoo6.com
+0.0.0.0 spinyoo7.com
+0.0.0.0 spinyoo8.com
+0.0.0.0 spinyoo9.com
 0.0.0.0 sportaza.com
 0.0.0.0 sportaza1.com
 0.0.0.0 sportaza2.com
@@ -1059,6 +1139,16 @@
 0.0.0.0 velobet8.com
 0.0.0.0 velobet9.com
 0.0.0.0 verywellcasino88.com
+0.0.0.0 virginbet.com
+0.0.0.0 virginbet1.com
+0.0.0.0 virginbet2.com
+0.0.0.0 virginbet3.com
+0.0.0.0 virginbet4.com
+0.0.0.0 virginbet5.com
+0.0.0.0 virginbet6.com
+0.0.0.0 virginbet7.com
+0.0.0.0 virginbet8.com
+0.0.0.0 virginbet9.com
 0.0.0.0 wazamba.com
 0.0.0.0 wazamba1.com
 0.0.0.0 wazamba2.com
@@ -1079,6 +1169,16 @@
 0.0.0.0 weiss7.bet
 0.0.0.0 weiss8.bet
 0.0.0.0 weiss9.bet
+0.0.0.0 williamhill.com
+0.0.0.0 williamhill1.com
+0.0.0.0 williamhill2.com
+0.0.0.0 williamhill3.com
+0.0.0.0 williamhill4.com
+0.0.0.0 williamhill5.com
+0.0.0.0 williamhill6.com
+0.0.0.0 williamhill7.com
+0.0.0.0 williamhill8.com
+0.0.0.0 williamhill9.com
 0.0.0.0 winitbet.com
 0.0.0.0 winitbet1.com
 0.0.0.0 winitbet2.com
