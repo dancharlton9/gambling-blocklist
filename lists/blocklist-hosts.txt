@@ -4,8 +4,8 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2026-01-11 06:39:38 UTC
-# Total domains: 1192
+# Last updated: 2026-01-11 09:22:30 UTC
+# Total domains: 1202
 
 0.0.0.0 1red.com
 0.0.0.0 1red1.com
@@ -898,6 +898,16 @@
 0.0.0.0 piratespins7.com
 0.0.0.0 piratespins8.com
 0.0.0.0 piratespins9.com
+0.0.0.0 pitbet.io
+0.0.0.0 pitbet1.io
+0.0.0.0 pitbet2.io
+0.0.0.0 pitbet3.io
+0.0.0.0 pitbet4.io
+0.0.0.0 pitbet5.io
+0.0.0.0 pitbet6.io
+0.0.0.0 pitbet7.io
+0.0.0.0 pitbet8.io
+0.0.0.0 pitbet9.io
 0.0.0.0 playfina.com
 0.0.0.0 playfina1.com
 0.0.0.0 playfina2.com

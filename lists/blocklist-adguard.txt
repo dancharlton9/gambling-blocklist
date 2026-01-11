@@ -4,8 +4,8 @@
 ! Use alongside standard gambling blocklists for comprehensive coverage.
 #
 ! Repository: https://github.com/dancharlton9/gambling-blocklist
-! Last updated: 2026-01-11 06:39:38 UTC
-! Total domains: 1192
+! Last updated: 2026-01-11 09:22:30 UTC
+! Total domains: 1202
 
 ||1red.com^
 ||1red1.com^
@@ -898,6 +898,16 @@
 ||piratespins7.com^
 ||piratespins8.com^
 ||piratespins9.com^
+||pitbet.io^
+||pitbet1.io^
+||pitbet2.io^
+||pitbet3.io^
+||pitbet4.io^
+||pitbet5.io^
+||pitbet6.io^
+||pitbet7.io^
+||pitbet8.io^
+||pitbet9.io^
 ||playfina.com^
 ||playfina1.com^
 ||playfina2.com^
