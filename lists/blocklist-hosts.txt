@@ -4,7 +4,7 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2026-01-11 09:22:30 UTC
+# Last updated: 2026-01-18 06:38:08 UTC
 # Total domains: 1202
 
 0.0.0.0 1red.com
@@ -678,6 +678,16 @@
 0.0.0.0 luckydreams7.com
 0.0.0.0 luckydreams8.com
 0.0.0.0 luckydreams9.com
+0.0.0.0 luckytwice.com
+0.0.0.0 luckytwice1.com
+0.0.0.0 luckytwice2.com
+0.0.0.0 luckytwice3.com
+0.0.0.0 luckytwice4.com
+0.0.0.0 luckytwice5.com
+0.0.0.0 luckytwice6.com
+0.0.0.0 luckytwice7.com
+0.0.0.0 luckytwice8.com
+0.0.0.0 luckytwice9.com
 0.0.0.0 m.skybet.com
 0.0.0.0 m1.skybet.com
 0.0.0.0 m2.skybet.com
@@ -1018,16 +1028,6 @@
 0.0.0.0 slottica7.com
 0.0.0.0 slottica8.com
 0.0.0.0 slottica9.com
-0.0.0.0 spindog.com
-0.0.0.0 spindog1.com
-0.0.0.0 spindog2.com
-0.0.0.0 spindog3.com
-0.0.0.0 spindog4.com
-0.0.0.0 spindog5.com
-0.0.0.0 spindog6.com
-0.0.0.0 spindog7.com
-0.0.0.0 spindog8.com
-0.0.0.0 spindog9.com
 0.0.0.0 spinshark.com
 0.0.0.0 spinshark1.com
 0.0.0.0 spinshark2.com
