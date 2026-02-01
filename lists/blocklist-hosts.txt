@@ -4,7 +4,7 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2026-01-25 06:12:46 UTC
+# Last updated: 2026-02-01 06:24:21 UTC
 # Total domains: 1011
 
 0.0.0.0 1red.com
