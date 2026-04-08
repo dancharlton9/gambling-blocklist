@@ -4,8 +4,8 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2026-04-05 06:33:33 UTC
-# Total domains: 921
+# Last updated: 2026-04-08 04:29:40 UTC
+# Total domains: 931
 
 1red.com
 1red1.com
@@ -387,6 +387,16 @@ goldenlioncasino6.com
 goldenlioncasino7.com
 goldenlioncasino8.com
 goldenlioncasino9.com
+harry.casino
+harry1.casino
+harry2.casino
+harry3.casino
+harry4.casino
+harry5.casino
+harry6.casino
+harry7.casino
+harry8.casino
+harry9.casino
 hellspin.com
 hellspin1.com
 hellspin2.com
