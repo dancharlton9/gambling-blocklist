@@ -4,8 +4,8 @@
 ! Use alongside standard gambling blocklists for comprehensive coverage.
 #
 ! Repository: https://github.com/dancharlton9/gambling-blocklist
-! Last updated: 2026-05-31 07:27:00 UTC
-! Total domains: 931
+! Last updated: 2026-06-07 07:32:52 UTC
+! Total domains: 1001
 
 ||1red.com^
 ||1red1.com^
@@ -357,6 +357,16 @@
 ||gamblezen7.com^
 ||gamblezen8.com^
 ||gamblezen9.com^
+||games.boylesports.com^
+||games1.boylesports.com^
+||games2.boylesports.com^
+||games3.boylesports.com^
+||games4.boylesports.com^
+||games5.boylesports.com^
+||games6.boylesports.com^
+||games7.boylesports.com^
+||games8.boylesports.com^
+||games9.boylesports.com^
 ||go.affiliatemystake.com^
 ||go1.affiliatemystake.com^
 ||go2.affiliatemystake.com^
@@ -407,6 +417,16 @@
 ||hellspin7.com^
 ||hellspin8.com^
 ||hellspin9.com^
+||highbet.co.uk^
+||highbet1.co.uk^
+||highbet2.co.uk^
+||highbet3.co.uk^
+||highbet4.co.uk^
+||highbet5.co.uk^
+||highbet6.co.uk^
+||highbet7.co.uk^
+||highbet8.co.uk^
+||highbet9.co.uk^
 ||instantcasino.com^
 ||instantcasino1.com^
 ||instantcasino2.com^
@@ -437,6 +457,16 @@
 ||ivibet7.com^
 ||ivibet8.com^
 ||ivibet9.com^
+||jeffbet.casino-pp.net^
+||jeffbet1.casino-pp.net^
+||jeffbet2.casino-pp.net^
+||jeffbet3.casino-pp.net^
+||jeffbet4.casino-pp.net^
+||jeffbet5.casino-pp.net^
+||jeffbet6.casino-pp.net^
+||jeffbet7.casino-pp.net^
+||jeffbet8.casino-pp.net^
+||jeffbet9.casino-pp.net^
 ||justspin.com^
 ||justspin1.com^
 ||justspin2.com^
@@ -537,6 +567,16 @@
 ||luckydreams7.com^
 ||luckydreams8.com^
 ||luckydreams9.com^
+||m.skybet.com^
+||m1.skybet.com^
+||m2.skybet.com^
+||m3.skybet.com^
+||m4.skybet.com^
+||m5.skybet.com^
+||m6.skybet.com^
+||m7.skybet.com^
+||m8.skybet.com^
+||m9.skybet.com^
 ||magicwin.com^
 ||magicwin1.com^
 ||magicwin2.com^
@@ -687,6 +727,16 @@
 ||onluck7.com^
 ||onluck8.com^
 ||onluck9.com^
+||parimatch.co.uk^
+||parimatch1.co.uk^
+||parimatch2.co.uk^
+||parimatch3.co.uk^
+||parimatch4.co.uk^
+||parimatch5.co.uk^
+||parimatch6.co.uk^
+||parimatch7.co.uk^
+||parimatch8.co.uk^
+||parimatch9.co.uk^
 ||paripesa.com^
 ||paripesa1.com^
 ||paripesa2.com^
@@ -817,6 +867,16 @@
 ||slottica7.com^
 ||slottica8.com^
 ||slottica9.com^
+||spinyoo.com^
+||spinyoo1.com^
+||spinyoo2.com^
+||spinyoo3.com^
+||spinyoo4.com^
+||spinyoo5.com^
+||spinyoo6.com^
+||spinyoo7.com^
+||spinyoo8.com^
+||spinyoo9.com^
 ||sportaza.com^
 ||sportaza1.com^
 ||sportaza2.com^
@@ -928,6 +988,16 @@
 ||weiss7.bet^
 ||weiss8.bet^
 ||weiss9.bet^
+||williamhill.com^
+||williamhill1.com^
+||williamhill2.com^
+||williamhill3.com^
+||williamhill4.com^
+||williamhill5.com^
+||williamhill6.com^
+||williamhill7.com^
+||williamhill8.com^
+||williamhill9.com^
 ||winitbet.com^
 ||winitbet1.com^
 ||winitbet2.com^
