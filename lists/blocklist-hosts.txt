@@ -4,8 +4,8 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2026-06-28 07:31:07 UTC
-# Total domains: 1041
+# Last updated: 2026-07-05 07:14:17 UTC
+# Total domains: 1021
 
 0.0.0.0 1red.com
 0.0.0.0 1red1.com
@@ -267,16 +267,6 @@
 0.0.0.0 dazard7.com
 0.0.0.0 dazard8.com
 0.0.0.0 dazard9.com
-0.0.0.0 discord.gg
-0.0.0.0 discord1.gg
-0.0.0.0 discord2.gg
-0.0.0.0 discord3.gg
-0.0.0.0 discord4.gg
-0.0.0.0 discord5.gg
-0.0.0.0 discord6.gg
-0.0.0.0 discord7.gg
-0.0.0.0 discord8.gg
-0.0.0.0 discord9.gg
 0.0.0.0 donbet.com
 0.0.0.0 donbet1.com
 0.0.0.0 donbet2.com
@@ -297,16 +287,6 @@
 0.0.0.0 duelbits7.com
 0.0.0.0 duelbits8.com
 0.0.0.0 duelbits9.com
-0.0.0.0 en.sure.bet
-0.0.0.0 en1.sure.bet
-0.0.0.0 en2.sure.bet
-0.0.0.0 en3.sure.bet
-0.0.0.0 en4.sure.bet
-0.0.0.0 en5.sure.bet
-0.0.0.0 en6.sure.bet
-0.0.0.0 en7.sure.bet
-0.0.0.0 en8.sure.bet
-0.0.0.0 en9.sure.bet
 0.0.0.0 fairspin.io
 0.0.0.0 fairspin1.io
 0.0.0.0 fairspin2.io
