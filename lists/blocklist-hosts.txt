@@ -4,8 +4,8 @@
 # Use alongside standard gambling blocklists for comprehensive coverage.
 #
 # Repository: https://github.com/dancharlton9/gambling-blocklist
-# Last updated: 2026-07-12 08:23:01 UTC
-# Total domains: 1041
+# Last updated: 2026-07-19 08:22:30 UTC
+# Total domains: 931
 
 0.0.0.0 1red.com
 0.0.0.0 1red1.com
@@ -357,16 +357,6 @@
 0.0.0.0 gamblezen7.com
 0.0.0.0 gamblezen8.com
 0.0.0.0 gamblezen9.com
-0.0.0.0 games.boylesports.com
-0.0.0.0 games1.boylesports.com
-0.0.0.0 games2.boylesports.com
-0.0.0.0 games3.boylesports.com
-0.0.0.0 games4.boylesports.com
-0.0.0.0 games5.boylesports.com
-0.0.0.0 games6.boylesports.com
-0.0.0.0 games7.boylesports.com
-0.0.0.0 games8.boylesports.com
-0.0.0.0 games9.boylesports.com
 0.0.0.0 go.affiliatemystake.com
 0.0.0.0 go1.affiliatemystake.com
 0.0.0.0 go2.affiliatemystake.com
@@ -447,16 +437,6 @@
 0.0.0.0 ivibet7.com
 0.0.0.0 ivibet8.com
 0.0.0.0 ivibet9.com
-0.0.0.0 jeffbet.casino-pp.net
-0.0.0.0 jeffbet1.casino-pp.net
-0.0.0.0 jeffbet2.casino-pp.net
-0.0.0.0 jeffbet3.casino-pp.net
-0.0.0.0 jeffbet4.casino-pp.net
-0.0.0.0 jeffbet5.casino-pp.net
-0.0.0.0 jeffbet6.casino-pp.net
-0.0.0.0 jeffbet7.casino-pp.net
-0.0.0.0 jeffbet8.casino-pp.net
-0.0.0.0 jeffbet9.casino-pp.net
 0.0.0.0 justspin.com
 0.0.0.0 justspin1.com
 0.0.0.0 justspin2.com
@@ -557,26 +537,6 @@
 0.0.0.0 luckydreams7.com
 0.0.0.0 luckydreams8.com
 0.0.0.0 luckydreams9.com
-0.0.0.0 lunacasino.com
-0.0.0.0 lunacasino1.com
-0.0.0.0 lunacasino2.com
-0.0.0.0 lunacasino3.com
-0.0.0.0 lunacasino4.com
-0.0.0.0 lunacasino5.com
-0.0.0.0 lunacasino6.com
-0.0.0.0 lunacasino7.com
-0.0.0.0 lunacasino8.com
-0.0.0.0 lunacasino9.com
-0.0.0.0 m.skybet.com
-0.0.0.0 m1.skybet.com
-0.0.0.0 m2.skybet.com
-0.0.0.0 m3.skybet.com
-0.0.0.0 m4.skybet.com
-0.0.0.0 m5.skybet.com
-0.0.0.0 m6.skybet.com
-0.0.0.0 m7.skybet.com
-0.0.0.0 m8.skybet.com
-0.0.0.0 m9.skybet.com
 0.0.0.0 magicwin.com
 0.0.0.0 magicwin1.com
 0.0.0.0 magicwin2.com
@@ -727,16 +687,6 @@
 0.0.0.0 onluck7.com
 0.0.0.0 onluck8.com
 0.0.0.0 onluck9.com
-0.0.0.0 parimatch.co.uk
-0.0.0.0 parimatch1.co.uk
-0.0.0.0 parimatch2.co.uk
-0.0.0.0 parimatch3.co.uk
-0.0.0.0 parimatch4.co.uk
-0.0.0.0 parimatch5.co.uk
-0.0.0.0 parimatch6.co.uk
-0.0.0.0 parimatch7.co.uk
-0.0.0.0 parimatch8.co.uk
-0.0.0.0 parimatch9.co.uk
 0.0.0.0 paripesa.com
 0.0.0.0 paripesa1.com
 0.0.0.0 paripesa2.com
@@ -777,16 +727,6 @@
 0.0.0.0 playfina7.com
 0.0.0.0 playfina8.com
 0.0.0.0 playfina9.com
-0.0.0.0 playkasino.com
-0.0.0.0 playkasino1.com
-0.0.0.0 playkasino2.com
-0.0.0.0 playkasino3.com
-0.0.0.0 playkasino4.com
-0.0.0.0 playkasino5.com
-0.0.0.0 playkasino6.com
-0.0.0.0 playkasino7.com
-0.0.0.0 playkasino8.com
-0.0.0.0 playkasino9.com
 0.0.0.0 rabona.com
 0.0.0.0 rabona1.com
 0.0.0.0 rabona2.com
@@ -877,16 +817,6 @@
 0.0.0.0 slottica7.com
 0.0.0.0 slottica8.com
 0.0.0.0 slottica9.com
-0.0.0.0 spinyoo.com
-0.0.0.0 spinyoo1.com
-0.0.0.0 spinyoo2.com
-0.0.0.0 spinyoo3.com
-0.0.0.0 spinyoo4.com
-0.0.0.0 spinyoo5.com
-0.0.0.0 spinyoo6.com
-0.0.0.0 spinyoo7.com
-0.0.0.0 spinyoo8.com
-0.0.0.0 spinyoo9.com
 0.0.0.0 sportaza.com
 0.0.0.0 sportaza1.com
 0.0.0.0 sportaza2.com
@@ -907,16 +837,6 @@
 0.0.0.0 sportsbet7.io
 0.0.0.0 sportsbet8.io
 0.0.0.0 sportsbet9.io
-0.0.0.0 spreadex.com
-0.0.0.0 spreadex1.com
-0.0.0.0 spreadex2.com
-0.0.0.0 spreadex3.com
-0.0.0.0 spreadex4.com
-0.0.0.0 spreadex5.com
-0.0.0.0 spreadex6.com
-0.0.0.0 spreadex7.com
-0.0.0.0 spreadex8.com
-0.0.0.0 spreadex9.com
 0.0.0.0 stake.com
 0.0.0.0 stake1.com
 0.0.0.0 stake2.com
@@ -927,16 +847,6 @@
 0.0.0.0 stake7.com
 0.0.0.0 stake8.com
 0.0.0.0 stake9.com
-0.0.0.0 swiftcasino.com
-0.0.0.0 swiftcasino1.com
-0.0.0.0 swiftcasino2.com
-0.0.0.0 swiftcasino3.com
-0.0.0.0 swiftcasino4.com
-0.0.0.0 swiftcasino5.com
-0.0.0.0 swiftcasino6.com
-0.0.0.0 swiftcasino7.com
-0.0.0.0 swiftcasino8.com
-0.0.0.0 swiftcasino9.com
 0.0.0.0 thehighroller.com
 0.0.0.0 thehighroller1.com
 0.0.0.0 thehighroller2.com
@@ -947,16 +857,6 @@
 0.0.0.0 thehighroller7.com
 0.0.0.0 thehighroller8.com
 0.0.0.0 thehighroller9.com
-0.0.0.0 theonlinecasino.co.uk
-0.0.0.0 theonlinecasino1.co.uk
-0.0.0.0 theonlinecasino2.co.uk
-0.0.0.0 theonlinecasino3.co.uk
-0.0.0.0 theonlinecasino4.co.uk
-0.0.0.0 theonlinecasino5.co.uk
-0.0.0.0 theonlinecasino6.co.uk
-0.0.0.0 theonlinecasino7.co.uk
-0.0.0.0 theonlinecasino8.co.uk
-0.0.0.0 theonlinecasino9.co.uk
 0.0.0.0 track.affiliate31bets.com
 0.0.0.0 track1.affiliate31bets.com
 0.0.0.0 track2.affiliate31bets.com
@@ -997,16 +897,6 @@
 0.0.0.0 vegashero7.com
 0.0.0.0 vegashero8.com
 0.0.0.0 vegashero9.com
-0.0.0.0 vegasmobilecasino.co.uk
-0.0.0.0 vegasmobilecasino1.co.uk
-0.0.0.0 vegasmobilecasino2.co.uk
-0.0.0.0 vegasmobilecasino3.co.uk
-0.0.0.0 vegasmobilecasino4.co.uk
-0.0.0.0 vegasmobilecasino5.co.uk
-0.0.0.0 vegasmobilecasino6.co.uk
-0.0.0.0 vegasmobilecasino7.co.uk
-0.0.0.0 vegasmobilecasino8.co.uk
-0.0.0.0 vegasmobilecasino9.co.uk
 0.0.0.0 velobet.com
 0.0.0.0 velobet1.com
 0.0.0.0 velobet2.com
